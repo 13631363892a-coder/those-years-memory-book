@@ -1,0 +1,15 @@
+# 本地运行产生的临时文件
+__pycache__/
+*.pyc
+.DS_Store
+*.tmp
+
+# 选片联系表 / 测试截图 / 浏览器调试配置（体积大，非运行时需要）
+tools_cache/sheets/
+tools_cache/shots/
+tools_cache/edge-profile-*/
+tools_cache/diag*/
+tools_cache/diag2-*/
+tools_cache/diag3-*/
+
+# 旧版配置备份（保留在仓库内便于对照，不忽略）

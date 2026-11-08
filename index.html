@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="那些年，我们一起走过 — 初二至初三，一段不会重来的青春。">
+<title>那些年，我们一起走过 · 初二—初三</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/css/album.css">
+</head>
+<body>
+
+<div class="loading-veil" id="loading">
+  <div class="t">那些年，我们一起走过</div>
+  <div class="bar"><i></i></div>
+  <div class="s">正在翻开旧相册…</div>
+</div>
+
+<main class="room">
+  <header class="topbar">
+    <div class="brand">
+      <span class="mark">那些年，我们一起走过</span>
+      <span class="sub">初二 — 初三 · 青春纪念册</span>
+    </div>
+    <div class="center-note" id="chapter-note">一段不会重来的青春</div>
+    <div class="toolset">
+      <button class="tool" id="btn-toc" type="button" title="目录 / 章节跳转 (C)">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="lbl">目录</span>
+      </button>
+      <button class="tool" id="btn-music" type="button" aria-pressed="false" title="背景音乐 (M)">
+        <svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><span class="lbl">音乐</span>
+      </button>
+      <button class="tool" id="btn-fullscreen" type="button" title="全屏 (F)">
+        <svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <section class="stage" aria-label="可翻页的青春纪念册">
+    <div class="book-rig">
+      <div id="book" class="book" data-page-width="560" data-page-height="760"></div>
+    </div>
+  </section>
+
+  <footer class="controls" aria-label="相册控制">
+    <div class="nav-group">
+      <button class="nav-btn" id="previous" type="button" aria-label="上一页">
+        <svg viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="nav-btn" id="first" type="button" aria-label="回到封面" title="回到封面">
+        <svg viewBox="0 0 24 24"><path d="M6 5v14M18 6l-8 6 8 6z"/></svg>
+      </button>
+    </div>
+    <div class="status" aria-live="polite">
+      <span class="pg" id="page-status">封面</span>
+      <span class="chapter-name" id="chapter-name">致那段回不去的时光</span>
+      <span class="hint">拖页角 / 滑动 / ← → 翻页 · 点照片放大</span>
+    </div>
+    <div class="nav-group right">
+      <button class="nav-btn" id="next" type="button" aria-label="下一页">
+        <svg viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"/></svg>
+      </button>
+      <button class="nav-btn" id="last" type="button" aria-label="到最后一页" title="到最后一页">
+        <svg viewBox="0 0 24 24"><path d="M18 5v14M6 6l8 6-8 6z"/></svg>
+      </button>
+    </div>
+  </footer>
+</main>
+
+<aside class="chapter-drawer" id="drawer" aria-label="章节目录">
+  <button class="drawer-close" id="drawer-close" type="button" aria-label="关闭">×</button>
+  <h2 class="drawer-head">目录</h2>
+  <p class="drawer-sub">CONTENTS</p>
+  <div id="drawer-list"></div>
+</aside>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="照片放大">
+  <div class="lb-stage">
+    <button class="lb-arrow prev" id="lb-prev" type="button" aria-label="上一张"><svg viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6"/></svg></button>
+    <img id="lb-img" alt="">
+    <button class="lb-arrow next" id="lb-next" type="button" aria-label="下一张"><svg viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"/></svg></button>
+    <button class="lb-close" id="lb-close" type="button" aria-label="关闭"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="lb-bar">
+    <div class="lb-cap" id="lb-cap"></div>
+    <div class="lb-meta" id="lb-meta"></div>
+  </div>
+</div>
+
+<script src="assets/vendor/page-flip.browser.js"></script>
+<script src="assets/js/photo-index.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/album.js"></script>
+</body>
+</html>
